@@ -107,9 +107,9 @@ public class Operations {
 		while(in.available() > 0 && (val = in.read()) != -1) {
 			if (val > heap.peek()) {
 				//removing the min element in heap and adding val
-				heap.poll();
-				heap.add(val);
+				heap.poll(); //O(log(k)
+				heap.add(val); //O(log(k)
 			}
 		}
-	}
+	} //=> O(nlog(k)
 }
