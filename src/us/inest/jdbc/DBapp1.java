@@ -32,9 +32,22 @@ public class DBapp1 {
 		  //STEP 3: Open a connection
 	      System.out.println("Connecting to database...");
 	      conn = DriverManager.getConnection(DB_URL,USER,PASS);
-	      conn.close();
-		      
-	   } catch (Exception e) {
+	      stmt = conn.createStatement( );
+	      ResultSet rset = stmt.executeQuery("select 'Hello Thin driver tester '||USER||'!' result from dual");
+	      while(rset.next( )) {
+	    	  System.out.println(rset.getString(1));
+	      }
+	      rset.close( );
+	      stmt.close( );
+	      conn.close( );
+	   } 
+	   catch (ClassNotFoundException e) {
+		   e.printStackTrace();
+	   }
+	   catch (SQLException e) {
+		   e.printStackTrace();
+	   }
+	   catch (Exception e) {
 		  e.printStackTrace();
 	   }
 	}
