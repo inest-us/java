@@ -17,7 +17,7 @@ class CanReachEndTest {
 	}
 
 	@Test
-	void canReachEndInputShouldReturnFalse() {
+	void canReachEndInputShouldReturnTrue() {
 		boolean result = CanReachEnd.canReachEnd(Arrays.asList(3, 3, 1, 0, 2, 0, 1));
 		assertTrue(result);
 	}
