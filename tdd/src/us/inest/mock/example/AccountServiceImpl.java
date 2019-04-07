@@ -1,21 +1,36 @@
 package us.inest.mock.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class AccountServiceImpl {
+public class AccountServiceImpl implements AccountService {
 	public Account createNewAccount(Account account) {
-		return null;
+		// accountDao.insert(account);
+		// Ultimately return the account with the modification.
+		return account;
 	}
 	
 	public Account updateAccount(Account account) {
-		return null;
+		// accountDao.update(account);
+		// Ultimately return the account with the modification.
+		account.setName("Alvin Reyes: New Name");
+		return account;
 	}
 	
-	public Account removeAccount(Account account) {
-		return null;
+	public Boolean removeAccount(Account account) {
+		// accountDao.delete(account);
+		// Ultimately return the account with the modification.
+		// if exception occurs, return false.
+		return true;
 	}
 	
 	public List<Transaction> listAllTransactions(Account account) {
-		return null;
+		// accountDao.loadAllTransactions(account);
+		List<Transaction> listOfAllTransactions = new ArrayList<>();
+		listOfAllTransactions.add(new Transaction());
+		listOfAllTransactions.add(new Transaction());
+		listOfAllTransactions.add(new Transaction());
+		account.setTransactions(listOfAllTransactions);
+		return listOfAllTransactions;
 	}
 }
