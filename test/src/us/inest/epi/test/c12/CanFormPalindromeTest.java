@@ -1,4 +1,4 @@
-package inest.us.epi.test.c12;
+package us.inest.epi.test.c12;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import us.inest.epi.main.c12.CanFormPalindrome;
 
 class CanFormPalindromeTest {
+
 	CanFormPalindrome obj = new CanFormPalindrome();
 	
 	@Test
@@ -22,4 +23,5 @@ class CanFormPalindromeTest {
 		boolean result = obj.canFormPalindrome(s);
 		assertFalse(result);
 	}
+
 }
