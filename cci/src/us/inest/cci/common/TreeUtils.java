@@ -5,15 +5,15 @@ import java.util.List;
 
 public class TreeUtils {
 	
-	public static TreeNode init(TreeNode root, int[] input) {
+	public static TreeNode<Integer> init(TreeNode<Integer> root, int[] input) {
 		for (int data : input) {
 			root = bstInsert(root, data);
 		}
 		return root;
 	}
 	
-	public static TreeNode bstInsert(TreeNode root, int data) {
-		TreeNode n = new TreeNode(data);
+	public static TreeNode<Integer> bstInsert(TreeNode<Integer> root, int data) {
+		TreeNode<Integer> n = new TreeNode<Integer>(data);
 		if (root == null) {
 			return n;
 		}
@@ -27,13 +27,13 @@ public class TreeUtils {
 		return root;
 	}
 	
-	public static List<Integer> inOrder(TreeNode root) {
+	public static List<Integer> inOrder(TreeNode<Integer> root) {
 		List<Integer> result = new ArrayList<Integer>();
 		inOrderHelper(root, result);
 		return result;
 	}
 	
-	private static void inOrderHelper(TreeNode root, List<Integer> result) {
+	private static void inOrderHelper(TreeNode<Integer> root, List<Integer> result) {
 		if (root == null) {
 			return;
 		}
