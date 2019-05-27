@@ -1,4 +1,4 @@
-package us.inest.cci.common;
+package us.inest.epi.common;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,10 +10,11 @@ class TreeUtilsTest {
 
 	@Test
 	void testInsert() {
-		TreeNode<Integer> root = null;
-		root = TreeUtils.init(root, new int[] {3, 2, 1, 4, 5});
+		TreeNode root = null;
+		root = TreeUtils.init(root, new int[] {19, 7, 43, 3, 11, 23, 47, 2, 5, 17, 37, 53, 13, 29, 41, 31});
 		List<Integer> result = TreeUtils.inOrder(root);
 		assertNotNull(result);
 	}
 
 }
+
