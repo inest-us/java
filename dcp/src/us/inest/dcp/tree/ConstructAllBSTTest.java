@@ -7,11 +7,11 @@ import us.inest.dcp.common.TreeNode;
 
 class ConstructAllBSTTest {
 
-	@Test
-	void testConstructAllBST() {
-		int n = 3;
-		List<TreeNode> trees = ConstructAllBST.constructAllBST(n);
-		assertEquals(5, trees.size());
-	}
+    @Test
+    void testConstructAllBST() {
+        int n = 3;
+        List<TreeNode> trees = ConstructAllBST.constructAllBST(n);
+        assertEquals(5, trees.size());
+    }
 
 }

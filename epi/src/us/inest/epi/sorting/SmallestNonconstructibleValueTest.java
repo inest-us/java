@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 
 class SmallestNonconstructibleValueTest {
 
-	@Test
-	void testSmallestNonconstructibleValueTest() {
-		List<Integer> arr = new ArrayList<Integer>(Arrays.asList(12, 2, 1, 15, 2, 4)); 
-		int result = SmallestNonconstructibleValue.smallestNonconstructibleValue(arr);
-		assertEquals(10, result);
-	}
+    @Test
+    void testSmallestNonconstructibleValueTest() {
+        List<Integer> arr = new ArrayList<Integer>(Arrays.asList(12, 2, 1, 15, 2, 4));
+        int result = SmallestNonconstructibleValue.smallestNonconstructibleValue(arr);
+        assertEquals(10, result);
+    }
 
 }

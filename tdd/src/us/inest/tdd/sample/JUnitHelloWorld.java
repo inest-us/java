@@ -1,7 +1,7 @@
 package us.inest.tdd.sample;
 
 public class JUnitHelloWorld {
-	public boolean isGreater(int num1, int num2) {
-		return num1 > num2;
-	}
+    public boolean isGreater(int num1, int num2) {
+        return num1 > num2;
+    }
 }
