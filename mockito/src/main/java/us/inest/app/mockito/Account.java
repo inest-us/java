@@ -6,7 +6,7 @@ public class Account {
 	private String name;
 	private String description;
 	private List<Transaction> transactions;
-	
+
 	public String getName() {
 		return name;
 	}
