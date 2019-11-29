@@ -1,7 +1,7 @@
-package us.inest.cci.hashtable;
+package us.inest.app.cci.hashtable;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SparseArray {
     private int n;
