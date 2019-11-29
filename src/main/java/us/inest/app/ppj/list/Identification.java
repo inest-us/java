@@ -1,13 +1,12 @@
-package c02;
+package us.inest.app.ppj.list;
 
 public class Identification {
-
-    boolean detect_loop(Node head) {
+    boolean detect_loop(ListNode head) {
         if (head == null) {
             return false; // empty list does not have a loop
         }
-        Node trailing = head; //slow pointer
-        Node leading = head; //fast pointer
+        ListNode trailing = head; //slow pointer
+        ListNode leading = head; //fast pointer
         while (leading != null) {
             leading = leading.next;
             if (trailing == leading) {
