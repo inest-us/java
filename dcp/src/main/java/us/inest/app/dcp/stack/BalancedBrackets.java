@@ -1,4 +1,4 @@
-package us.inest.dcp.stack;
+package us.inest.app.dcp.stack;
 
 import java.util.Stack;
 

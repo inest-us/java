@@ -1,4 +1,4 @@
-package us.inest.dcp.math;
+package us.inest.app.dcp.math;
 
 import java.util.Random;
 
