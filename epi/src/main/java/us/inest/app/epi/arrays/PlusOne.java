@@ -1,4 +1,4 @@
-package us.inest.epi.arrays;
+package us.inest.app.epi.arrays;
 
 import java.util.List;
 
