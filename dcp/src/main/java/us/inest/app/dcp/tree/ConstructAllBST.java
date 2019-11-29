@@ -1,8 +1,7 @@
-package us.inest.dcp.tree;
+package us.inest.app.dcp.tree;
 
 import java.util.ArrayList;
 import java.util.List;
-import us.inest.dcp.common.TreeNode;
 
 public class ConstructAllBST {
     public static List<TreeNode> constructAllBST(int n) {
