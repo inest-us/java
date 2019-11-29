@@ -1,4 +1,4 @@
-package us.inest.dp.factorymethod;
+package us.inest.app.dp.factorymethod;
 
 public class LastFirst extends Namer {
     // split last, first

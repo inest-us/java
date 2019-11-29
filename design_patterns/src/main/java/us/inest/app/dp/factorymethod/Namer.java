@@ -1,4 +1,4 @@
-package us.inest.dp.factorymethod;
+package us.inest.app.dp.factorymethod;
 
 public class Namer {
     // a simple class to take a string apart into two names

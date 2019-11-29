@@ -1,13 +1,12 @@
-package us.inest.dp.factorymethod;
+package us.inest.app.dp.factorymethod;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
-
-class NameFactoryTest {
+public class NameFactoryTest {
 
     @Test
-    void testFirstFirst() {
+    public void testFirstFirst() {
         NameFactory nfactory = new NameFactory();
         // send the text to the factory and get a class back
         Namer namer = nfactory.getNamer("Adam Smith");
@@ -20,7 +19,7 @@ class NameFactoryTest {
     }
 
     @Test
-    void testLastFirst() {
+    public void testLastFirst() {
         NameFactory nfactory = new NameFactory();
         // send the text to the factory and get a class back
         Namer namer = nfactory.getNamer("Smith, Adam");
@@ -33,3 +32,4 @@ class NameFactoryTest {
     }
 
 }
+
