@@ -1,4 +1,4 @@
-package us.inest.cci.stackandqueue;
+package us.inest.app.cci.stackandqueue;
 
 import java.util.Stack;
 

@@ -1,9 +1,12 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.searching;
 
 public class RotatedSearch {
+    /*
+     * using case analysis
+     */
     public int rotatedSearch(int[] a, int left, int right, int x) {
         if (right < left) {
-            return -1;
+            return -1; //not found
         }
         int mid = (left + right) / 2;
         if (x == a[mid]) {

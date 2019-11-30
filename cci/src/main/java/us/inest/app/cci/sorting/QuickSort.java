@@ -1,4 +1,4 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.sorting;
 
 public class QuickSort {
     public void quicksort(int[] arr) {
