@@ -1,6 +1,6 @@
-package us.inest.cci.tree;
+package us.inest.app.cci.tree;
 
-import us.inest.cci.common.TreeNode;
+import us.inest.app.cci.common.TreeNode;
 
 public class UnivalTree {
     public int countUnivalSubTrees(TreeNode<Integer> root) {

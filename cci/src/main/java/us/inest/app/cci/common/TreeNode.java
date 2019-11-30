@@ -1,4 +1,4 @@
-package us.inest.cci.common;
+package us.inest.app.cci.common;
 
 public class TreeNode<T> {
     public T data;

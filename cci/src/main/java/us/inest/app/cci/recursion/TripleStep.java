@@ -1,8 +1,9 @@
-package us.inest.cci.recursion;
+package us.inest.app.cci.recursion;
 
 import java.util.Arrays;
 
 public class TripleStep {
+    
     public int countWays(int n) {
         // base cases
         if (n < 0) {

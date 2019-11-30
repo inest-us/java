@@ -1,13 +1,12 @@
-package us.inest.cci.tree;
+package us.inest.app.cci.grapgh;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-class Graph {
-    public GraphNode[] nodes;
-}
+import us.inest.app.cci.common.Graph;
+import us.inest.app.cci.common.GraphNode;
 
 public class GraphSearch {
     boolean search(Graph g, GraphNode start, GraphNode end) {

@@ -1,10 +1,9 @@
-package us.inest.cci.common;
+package us.inest.app.cci.common;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TreeUtils {
-
     public static TreeNode<Integer> init(TreeNode<Integer> root, int[] input) {
         for (int data : input) {
             root = bstInsert(root, data);
