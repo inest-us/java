@@ -1,9 +1,8 @@
-package us.inest.epi.list;
+package us.inest.app.epi.list;
 
-import us.inest.epi.common.ListNode;
+import us.inest.app.epi.common.ListNode;
 
 public class MergeLists {
-
     public static ListNode mergeTwoSortedList(ListNode L1, ListNode L2) {
         ListNode dummyHead = new ListNode(0, null);
         ListNode current = dummyHead;

@@ -1,4 +1,4 @@
-package us.inest.epi.common;
+package us.inest.app.epi.common;
 
 public class ListUtils {
     public static ListNode searchList(ListNode head, int key) {
@@ -8,6 +8,23 @@ public class ListUtils {
         return head;
     }
 
+    public static ListNode init(int[] arr) {
+        ListNode dummyHead = new ListNode(0, null);
+        for (int i = 0; i < arr.length; i++) {
+            insertLast(dummyHead, arr[i]);
+        }
+        return dummyHead.next;
+    }
+    
+    public static void insertLast(ListNode head, int data) {
+        ListNode last = head;
+        while (last.next != null) {
+            last = last.next;
+        }
+        ListNode newNode = new ListNode(data, null);
+        last.next = newNode;
+    }
+    
     public static void insertAfter(ListNode node, ListNode newNode) {
         newNode.next = node.next;
         node.next = newNode;
