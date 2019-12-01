@@ -1,7 +1,7 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.searching;
 
 public class FindDuplicates {
-    public void findDuplicates(int[] arr) {
+    public Integer findDuplicates(int[] arr) {
         // create a bit vectors with 32000 bits, where each bit represents an integer
         BitSet bs = new BitSet(32000);
 
@@ -9,12 +9,13 @@ public class FindDuplicates {
             int num = arr[i];
             int pos = num - 1; // number is store at position (number - 1)
             if (bs.get(pos)) {
-                // num is duplicate
-                System.out.println(num);
+                return num;
             } else {
                 bs.set(pos);
             }
         }
+
+        return null; // no duplicate
     }
 
     class BitSet {
