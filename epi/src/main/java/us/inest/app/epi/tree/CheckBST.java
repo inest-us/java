@@ -1,6 +1,6 @@
-package us.inest.epi.tree;
+package us.inest.app.epi.tree;
 
-import us.inest.epi.common.TreeNode;
+import us.inest.app.epi.common.TreeNode;
 
 public class CheckBST {
     public static boolean isBinaryTreeBST(TreeNode root) {

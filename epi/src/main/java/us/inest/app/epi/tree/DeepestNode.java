@@ -1,6 +1,6 @@
-package us.inest.epi.tree;
+package us.inest.app.epi.tree;
 
-import us.inest.epi.common.TreeNode;
+import us.inest.app.epi.common.TreeNode;
 
 public class DeepestNode {
     public TreeNode findDeepestNode(TreeNode root) {
@@ -36,7 +36,7 @@ public class DeepestNode {
         if (root == null) {
             return null;
         }
-        if (level == 1) {
+        if (level == 0) {
             return root;
         }
         TreeNode leftResult = findDeepestNodeV2Helper(root.left, level - 1);
@@ -52,7 +52,7 @@ public class DeepestNode {
 
     private int getHeight(TreeNode root) {
         if (root == null) {
-            return 0;
+            return -1;
         }
         int leftHeight = getHeight(root.left);
         int rightHeight = getHeight(root.right);
