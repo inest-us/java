@@ -1,4 +1,4 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.sorting;
 
 import java.util.ArrayList;
 import java.util.Arrays;

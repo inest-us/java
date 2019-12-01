@@ -1,4 +1,4 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.searching;
 
 public class MatrixSearch {
     public boolean findElement(int[][] matrix, int e) {

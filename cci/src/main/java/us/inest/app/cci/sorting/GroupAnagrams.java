@@ -1,11 +1,11 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.sorting;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class GroupAnagrams {
-    class AnagramComparator implements Comparator<String> {
-        public String sortChars(String s) {
+    private class AnagramComparator implements Comparator<String> {
+        private String sortChars(String s) {
             if (s == null || s.length() <= 1) {
                 return s;
             }

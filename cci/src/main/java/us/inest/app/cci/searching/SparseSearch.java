@@ -1,4 +1,4 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.searching;
 
 public class SparseSearch {
     public int sparseSearch(String[] arr, String str) {

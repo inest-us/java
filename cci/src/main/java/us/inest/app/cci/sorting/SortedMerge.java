@@ -1,4 +1,4 @@
-package us.inest.cci.sortingandsearching;
+package us.inest.app.cci.sorting;
 
 public class SortedMerge {
     public void merge(int[] a, int[] b, int lengthA, int lengthB) {
