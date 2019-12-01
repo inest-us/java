@@ -1,4 +1,4 @@
-package us.inest.epi.common;
+package us.inest.app.epi.common;
 
 public class TreeNode {
     public int data;

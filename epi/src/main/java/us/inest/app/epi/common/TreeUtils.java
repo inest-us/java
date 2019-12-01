@@ -1,4 +1,4 @@
-package us.inest.epi.common;
+package us.inest.app.epi.common;
 
 import java.util.ArrayList;
 import java.util.List;
