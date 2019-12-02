@@ -1,8 +1,8 @@
-package us.inest.epi.tree;
+package us.inest.app.epi.tree;
 
 import java.util.List;
 
-import us.inest.epi.common.TreeNode;
+import us.inest.app.epi.common.TreeNode;
 
 public class RebuildBSTFromPreorder {
     public static TreeNode rebuildBSTFromPreorder(List<Integer> arr) {
@@ -10,6 +10,7 @@ public class RebuildBSTFromPreorder {
     }
 
     private static TreeNode rebuildBSTFromPreorderHelper(List<Integer> arr, int start, int end) {
+        // base case
         if (start >= end) {
             return null;
         }
