@@ -1,24 +1,28 @@
-package c06;
+package us.inest.app.ppj.hashtable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class SimpleHashTable extends HashTable {
-    private List<Item> items;
+public class SimpleHashTable extends HashTable {
+    private List<List<Item>> items;
 
-    SimpleHashTable() {
+    public SimpleHashTable() {
         this(DEFAULT_HASH_TABLE_SIZE);
     }
 
-    SimpleHashTable(int size) {
-        this.items = new ArrayList<>(Collections.nCopies(size, (Item) null));
+    public SimpleHashTable(int size) {
+        items = new ArrayList<>(size);
+        for (int i = 0; i < items.size(); i++) {
+            items.set(i, new ArrayList<>());
+        }
     }
 
     @Override
     void insert(Item entry) {
-        // TODO Auto-generated method stub
-
+        int hash = hash_function(entry.key);
+        int index = hash % items.size();
+        items.get(index).add(entry);
     }
 
     @Override

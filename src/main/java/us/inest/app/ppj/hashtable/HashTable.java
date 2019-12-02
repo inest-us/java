@@ -1,6 +1,6 @@
-package c06;
+package us.inest.app.ppj.hashtable;
 
-abstract class HashTable {
+public abstract class HashTable {
     protected static final int DEFAULT_HASH_TABLE_SIZE = 97;
 
     int hash_function(String str) {
