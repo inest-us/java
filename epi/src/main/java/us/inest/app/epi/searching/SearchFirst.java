@@ -1,4 +1,4 @@
-package us.inest.epi.searching;
+package us.inest.app.epi.searching;
 
 import java.util.List;
 

@@ -1,20 +1,18 @@
-package us.inest.epi.sorting;
+package us.inest.app.epi.sorting;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class SmallestNonconstructibleValueTest {
-
+public class SmallestNonconstructibleValueTest {
     @Test
-    void testSmallestNonconstructibleValueTest() {
+    public void testSmallestNonconstructibleValueTest() {
         List<Integer> arr = new ArrayList<Integer>(Arrays.asList(12, 2, 1, 15, 2, 4));
         int result = SmallestNonconstructibleValue.smallestNonconstructibleValue(arr);
         assertEquals(10, result);
     }
-
 }

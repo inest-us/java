@@ -1,17 +1,16 @@
-package us.inest.epi.sorting;
+package us.inest.app.epi.sorting;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class AddIntervalTest {
-
+public class AddIntervalTest {
     @Test
-    void testAddInterval() {
+    public void testAddInterval() {
         List<Interval> disjointIntervals = new ArrayList<>(Arrays.asList(new Interval(-4, -1), new Interval(0, 2),
                 new Interval(3, 6), new Interval(7, 9), new Interval(11, 12), new Interval(14, 17)));
         Interval newInterval = new Interval(1, 8);

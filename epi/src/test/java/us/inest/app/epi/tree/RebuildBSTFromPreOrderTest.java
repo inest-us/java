@@ -12,7 +12,7 @@ import us.inest.app.epi.common.TreeNode;
 
 public class RebuildBSTFromPreOrderTest {
     @Test
-    void testRebuildBSTFromPreorder() {
+    public void testRebuildBSTFromPreorder() {
         List<Integer> arr = new ArrayList<Integer>(Arrays.asList(43, 23, 37, 29, 31, 41, 47, 53));
         TreeNode root = RebuildBSTFromPreorder.rebuildBSTFromPreorder(arr);
         assertEquals(43, root.data);

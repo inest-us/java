@@ -1,4 +1,4 @@
-package us.inest.epi.sorting;
+package us.inest.app.epi.sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
