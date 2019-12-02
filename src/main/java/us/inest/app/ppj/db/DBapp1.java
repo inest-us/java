@@ -1,9 +1,12 @@
-package us.inest.jdbc;
+package us.inest.app.ppj.db;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DBapp1 {
-
     /*
      * Driver class: The driver class for the oracle database is
      * oracle.jdbc.driver.OracleDriver. Connection URL: The connection URL for the
@@ -24,7 +27,7 @@ public class DBapp1 {
     static final String USER = "SYSTEM";
     static final String PASS = "sys";
 
-    public static void main(String[] args) {
+    public static void simpleOperations() {
         Connection conn = null;
         Statement stmt = null;
         try {
