@@ -1,9 +1,19 @@
-package c03;
+package us.inest.app.ppj.tree;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+import java.util.Stack;
 
 public class TreeProperties {
-    int size(Node root) {
+    /*
+     * return the number of nodes
+     */
+    public int size(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -14,15 +24,15 @@ public class TreeProperties {
     /*
      * using a queue Breath-First-Search
      */
-    int size_iterative(Node root) {
+    public int size_iterative(TreeNode root) {
         if (root == null) {
             return 0;
         }
         int count = 0;
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
         q.add(root);
         while (!q.isEmpty()) {
-            Node front = q.poll();
+            TreeNode front = q.poll();
             count++;
             if (front.left != null) {
                 q.add(front.left);
@@ -34,9 +44,9 @@ public class TreeProperties {
         return count;
     }
 
-    int depth(Node root) {
+    public int depth(TreeNode root) {
         if (root == null) {
-            return 0;
+            return -1;
         }
         return 1 + Math.max(depth(root.left), depth(root.right));
     }
@@ -44,16 +54,16 @@ public class TreeProperties {
     /*
      * using a stack Depth-First-Search
      */
-    int depth_iterative(Node root) {
+    public int depth_iterative(TreeNode root) {
         if (root == null) {
-            return 0;
+            return -1;
         }
         int max_depth = 0;
-        Set<Node> visited = new HashSet<Node>();
-        Stack<Node> s = new Stack<Node>();
+        Set<TreeNode> visited = new HashSet<TreeNode>();
+        Stack<TreeNode> s = new Stack<TreeNode>();
         s.push(root);
         while (!s.isEmpty()) {
-            Node top = s.peek();
+            TreeNode top = s.peek();
             // process current node
             if (top.left != null && !visited.contains(top.left)) {
                 s.push(top.left);
@@ -63,7 +73,7 @@ public class TreeProperties {
                 // done with visiting current node
                 visited.add(top);
                 max_depth = Math.max(max_depth, s.size());
-                s.pop();
+                s.pop(); //backtrack so that we can check another path
             }
         }
         return max_depth;
@@ -73,7 +83,7 @@ public class TreeProperties {
      * to determine whether or not a binary tree is balanced we must evaluate
      * whether or not every sub-tree is balanced.
      */
-    boolean balanced_naive(Node root) {
+    public boolean balanced_naive(TreeNode root) {
         if (root == null) {
             return true;
         }
@@ -90,7 +100,7 @@ public class TreeProperties {
      * A linear solution would require modifying the recursion to return the depth
      * of the sub-tree as well as if it is balanced or not
      */
-    boolean balanced_depth(Node root, int[] depth) {
+    public boolean balanced_depth(TreeNode root, int[] depth) {
         if (root == null) {
             depth[0] = 0;
             return true;
@@ -116,12 +126,12 @@ public class TreeProperties {
         return true;
     }
 
-    boolean balanced(Node root) {
+    public boolean balanced(TreeNode root) {
         int[] depth = new int[1];
         return balanced_depth(root, depth);
     }
 
-    boolean find_path(Node root, Node target, List<Node> path) {
+    public boolean find_path(TreeNode root, TreeNode target, List<TreeNode> path) {
         if (target == null) {
             return true;
         }
@@ -134,23 +144,23 @@ public class TreeProperties {
             }
         }
         if (path.get(path.size() - 1) == target) {
-            return true;
+            return true; //found a path
         } else {
             path.clear();
-            return false;
+            return false; //did not find any path
         }
     }
 
-    Node lca_from_path(Node root, Node x, Node y) {
-        List<Node> x_path = new ArrayList<>();
-        List<Node> y_path = new ArrayList<>();
+    public TreeNode lca_from_path(TreeNode root, TreeNode x, TreeNode y) {
+        List<TreeNode> x_path = new ArrayList<>();
+        List<TreeNode> y_path = new ArrayList<>();
         find_path(root, x, x_path);
         find_path(root, y, y_path);
 
-        Node lca = null;
-        Iterator<Node> x_path_iterator = x_path.iterator();
-        Iterator<Node> y_path_iterator = y_path.iterator();
-        Node current_x, current_y;
+        TreeNode lca = null;
+        Iterator<TreeNode> x_path_iterator = x_path.iterator();
+        Iterator<TreeNode> y_path_iterator = y_path.iterator();
+        TreeNode current_x, current_y;
 
         while (x_path_iterator.hasNext() && y_path_iterator.hasNext()) {
             current_x = x_path_iterator.next();
@@ -163,7 +173,7 @@ public class TreeProperties {
         return lca;
     }
 
-    Node lca_recursive(Node root, Node x, Node y) {
+    public TreeNode lca_recursive(TreeNode root, TreeNode x, TreeNode y) {
         if (root == null || x == null || y == null) {
             return null;
         }
@@ -179,10 +189,10 @@ public class TreeProperties {
         return lca_recursive(root.right, x, y);
     }
 
-    Node lca_iterative(Node root, Node x, Node y) {
+    public TreeNode lca_iterative(TreeNode root, TreeNode x, TreeNode y) {
         if (x != null && y != null && x.value > y.value) {
             // swap x and y so that y.value > x.value => simplify our if condition
-            Node temp = y;
+            TreeNode temp = y;
             y = x;
             x = temp;
         }

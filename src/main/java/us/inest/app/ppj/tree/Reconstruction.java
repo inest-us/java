@@ -1,9 +1,9 @@
-package c03;
+package us.inest.app.ppj.tree;
 
 import java.util.List;
 
 public class Reconstruction {
-    void inOrder(Node root) {
+    public void inOrder(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -12,7 +12,7 @@ public class Reconstruction {
         inOrder(root.right);
     }
 
-    void postOrder(Node root) {
+    public void postOrder(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -21,7 +21,7 @@ public class Reconstruction {
         System.out.println(root.value);// process root
     }
 
-    void preOrder(Node root) {
+    public void preOrder(TreeNode root) {
         if (root == null) {
             return;
         }
@@ -30,8 +30,8 @@ public class Reconstruction {
         preOrder(root.right);
     }
 
-    Node reconstruct_tree(List<Integer> inorder, List<Integer> preorder) {
-        Node root = null;
+    public TreeNode reconstruct_tree(List<Integer> inorder, List<Integer> preorder) {
+        TreeNode root = null;
         int inorder_pos;
         int preorder_pos;
         List<Integer> left_preorder;
@@ -40,7 +40,7 @@ public class Reconstruction {
         List<Integer> right_inorder;
 
         if (preorder.size() != 0 && inorder.size() != 0) {
-            root = new Node(preorder.get(0));
+            root = new TreeNode(preorder.get(0));
 
             inorder_pos = inorder.indexOf(preorder.get(0));
             left_inorder = inorder.subList(0, inorder_pos);

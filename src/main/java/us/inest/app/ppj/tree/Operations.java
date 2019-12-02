@@ -1,13 +1,13 @@
-package c03;
+package us.inest.app.ppj.tree;
 
 public class Operations {
     /*
      * Insert into a Binary Search Tree
      */
-    Node insert(Node root, int val) {
+    public TreeNode insert(TreeNode root, int val) {
         if (root == null) {
             // empty tree
-            return new Node(val);
+            return new TreeNode(val);
         }
         if (val < root.value) {
             // insert into the left sub-tree
@@ -22,7 +22,7 @@ public class Operations {
     /*
      * Find a Node with value equals to val in a BST
      */
-    Node find(Node root, int val) {
+    public TreeNode find(TreeNode root, int val) {
         if (root == null || root.value == val) {
             return root;
         }
@@ -36,7 +36,7 @@ public class Operations {
         }
     }
 
-    Node find_parent(Node root, Node target) {
+    public TreeNode find_parent(TreeNode root, TreeNode target) {
         if (root == target) {
             return null; // root does not have parent
         }
@@ -50,8 +50,8 @@ public class Operations {
         return root;
     }
 
-    Node find_successor(Node root, Node target) {
-        Node successor = target.right;
+    public TreeNode find_successor(TreeNode root, TreeNode target) {
+        TreeNode successor = target.right;
 
         if (successor != null) {
             // find the left-most node of the right sub-tree
@@ -71,10 +71,10 @@ public class Operations {
         return successor;
     }
 
-    Node remove(Node root, Node target) {
+    public TreeNode remove(TreeNode root, TreeNode target) {
         // if target has 2 children
         if (target.left == null && target.right == null) {
-            Node next = find_successor(root, target);
+            TreeNode next = find_successor(root, target);
             int data = next.value;
             remove(root, next);
             target.value = data;
@@ -82,7 +82,7 @@ public class Operations {
         }
         // if target has one child
         if (target.left != null || target.right != null) {
-            Node temp = (target.left != null) ? target.left : target.right;
+            TreeNode temp = (target.left != null) ? target.left : target.right;
             target.value = temp.value;
             target.left = temp.left;
             target.right = temp.right;
@@ -92,7 +92,7 @@ public class Operations {
         if (root == target) {
             return null;
         }
-        Node parent = find_parent(root, target);
+        TreeNode parent = find_parent(root, target);
         if (parent.left == target) {
             parent.left = null;
         } else {
