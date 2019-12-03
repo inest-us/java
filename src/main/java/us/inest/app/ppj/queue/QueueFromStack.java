@@ -1,4 +1,4 @@
-package c04;
+package us.inest.app.ppj.queue;
 
 import java.util.Stack;
 

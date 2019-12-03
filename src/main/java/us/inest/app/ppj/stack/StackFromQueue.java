@@ -1,4 +1,4 @@
-package c04;
+package us.inest.app.ppj.stack;
 
 import java.util.LinkedList;
 import java.util.Queue;

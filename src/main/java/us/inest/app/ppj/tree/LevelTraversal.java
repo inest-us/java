@@ -1,37 +1,37 @@
-package c04;
+package us.inest.app.ppj.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class LevelTraversal {
-    void level_traversal(Node root) {
+    public void level_traversal(TreeNode root) {
         if (root == null) {
             return;
         }
 
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            Node n = queue.poll();
+            TreeNode n = queue.poll();
             if (n.left != null) {
                 queue.add(n.left);
             }
             if (n.right != null) {
                 queue.add(n.right);
             }
-            System.out.println(n.data);
+            System.out.println(n.value);
         }
     }
 
-    void level_traversal_with_separation_token(Node root) {
+    public void level_traversal_with_separation_token(TreeNode root) {
         if (root == null) {
             return;
         }
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
         queue.add(null); // using null as a LEVEL_TOKEN
         while (!queue.isEmpty()) {
-            Node node = queue.poll();
+            TreeNode node = queue.poll();
             if (node == null) {
                 if (!queue.isEmpty()) {
                     System.out.println("END LEVEL");
@@ -45,7 +45,7 @@ public class LevelTraversal {
             if (node.right != null) {
                 queue.add(node.right);
             }
-            System.out.println(node.data);
+            System.out.println(node.value);
         }
     }
 }

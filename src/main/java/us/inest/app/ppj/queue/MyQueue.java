@@ -1,24 +1,24 @@
-package c04;
+package us.inest.app.ppj.queue;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class MyStack {
+public class MyQueue {
     private List<Integer> list;
 
-    MyStack() {
+    public MyQueue() {
         list = new LinkedList<Integer>();
     }
 
-    void push(int data) {
-        list.add(0, data);
+    void add(int data) {
+        list.add(data);
     }
 
     Integer peek() {
         return (list.size() == 0) ? null : list.get(0);
     }
 
-    Integer pop() {
+    Integer poll() {
         return (list.size() == 0) ? null : list.remove(0);
     }
 }
