@@ -1,4 +1,4 @@
-package us.inest.app.cci.grapgh;
+package us.inest.app.cci.graph;
 
 import java.util.HashSet;
 import java.util.LinkedList;
