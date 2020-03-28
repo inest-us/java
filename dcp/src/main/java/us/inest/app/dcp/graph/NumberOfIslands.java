@@ -7,23 +7,23 @@ public class NumberOfIslands {
             for (int j = 0; j < grid[i].length; j++) {
                 if (grid[i][j] == '1') {
                     count++;
-                    BFS(grid, i, j);
+                    DFS(grid, i, j);
                 }
             }
         }
         return count;
     }
 
-    private static void BFS(char[][] grid, int i, int j) {
+    private static void DFS(char[][] grid, int i, int j) {
         // check if it is out of bound or water
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[i].length || grid[i][j] == '0') {
             return;
         }
 
         grid[i][j] = '0'; // used
-        BFS(grid, i - 1, j); // up
-        BFS(grid, i + 1, j); // down
-        BFS(grid, i, j - 1); // left
-        BFS(grid, i, j + 1); // right
+        DFS(grid, i - 1, j); // up
+        DFS(grid, i + 1, j); // down
+        DFS(grid, i, j - 1); // left
+        DFS(grid, i, j + 1); // right
     }
 }
