@@ -1,4 +1,4 @@
-package us.inest.app.springboot;
+package us.inest.app.springboot.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
