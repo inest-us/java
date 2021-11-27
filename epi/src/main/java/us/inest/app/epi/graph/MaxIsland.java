@@ -6,11 +6,12 @@ public class MaxIsland {
     
     public static int findMaxIsland(int[][] graph) {
         int maxArea = 0;
-        Set<String> visited = new HashSet<>(); 
+        boolean[][] visited = new boolean[graph.length][graph[0].length];
+        
         for (int i = 0; i < graph.length; i++) {
             for (int j = 0; j < graph[0].length; j++) {
                 String key = String.format("%d,%d", i, j);
-                if (graph[i][j] != 0 && !visited.contains(key)) {
+                if (graph[i][j] != 0 && !visited[i][j]) {
                     //explore a new island
                     int area = explore(graph, i, j, visited);
                     maxArea = Math.max(maxArea, area);
@@ -20,7 +21,7 @@ public class MaxIsland {
         return maxArea;
     }
     
-    private static int explore(int[][] graph, int r, int c, Set<String> visited) {
+    private static int explore(int[][] graph, int r, int c, boolean[][] visited) {
         if (r < 0 || r >= graph.length || c < 0 || c >= graph[0].length) {
             return 0; // out of bound
         }
@@ -30,12 +31,12 @@ public class MaxIsland {
         }
         
         String key = String.format("%d,%d", r, c);
-        if (visited.contains(key)) {
+        if (visited[r][c]) {
             return 0; // this cell is already visited
         }
         
         // mark this cell as visited
-        visited.add(key);
+        visited[r][c] = true;
         
         int area = 1;
         area += explore(graph, r + 1, c, visited); // going down
