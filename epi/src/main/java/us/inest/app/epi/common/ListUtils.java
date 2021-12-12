@@ -1,5 +1,7 @@
 package us.inest.app.epi.common;
 
+import java.util.*;
+
 public class ListUtils {
     public static ListNode searchList(ListNode head, int key) {
         while (head != null && head.data != key) {
@@ -15,7 +17,7 @@ public class ListUtils {
         }
         return dummyHead.next;
     }
-    
+
     public static void insertLast(ListNode head, int data) {
         ListNode last = head;
         while (last.next != null) {
@@ -24,7 +26,7 @@ public class ListUtils {
         ListNode newNode = new ListNode(data, null);
         last.next = newNode;
     }
-    
+
     public static void insertAfter(ListNode node, ListNode newNode) {
         newNode.next = node.next;
         node.next = newNode;
@@ -41,5 +43,12 @@ public class ListUtils {
             head = head.next;
         }
         return len;
+    }
+
+    public static void print(List<String> list) {
+        for (String s : list) {
+            System.out.print(s + " ");
+        }
+        System.out.println();
     }
 }
