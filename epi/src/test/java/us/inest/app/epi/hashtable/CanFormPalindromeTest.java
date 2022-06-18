@@ -10,4 +10,11 @@ public class CanFormPalindromeTest {
         boolean result = CanFormPalindrome.canFormPalindrome(s);
         assertTrue(result);
     }
+    
+    @Test
+    public void testCanFormPalindrome_Return_False() {
+        String s = "abcde";
+        boolean result = CanFormPalindrome.canFormPalindrome(s);
+        assertFalse(result);
+    }
 }

@@ -34,11 +34,87 @@ public class TreeUtils {
     }
 
     private static void inOrderHelper(TreeNode root, List<Integer> result) {
-        if (root == null) {
+        if (root == null) { // base case
             return;
         }
         inOrderHelper(root.left, result);
         result.add(root.data);
         inOrderHelper(root.right, result);
+    }
+    
+    public static List<Integer> preOrder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        preOrderHelper(root, result);
+        return result;
+    }
+    
+    private static void preOrderHelper(TreeNode root, List<Integer> result) {
+        if (root == null) { // base case
+            return;
+        }
+        result.add(root.data);
+        preOrderHelper(root.left, result);
+        preOrderHelper(root.right, result);
+    }
+    
+    public static List<Integer> postOrder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        postOrderHelper(root, result);
+        return result;
+    }
+    
+    private static void postOrderHelper(TreeNode root, List<Integer> result) {
+        if (root == null) { // base case
+            return;
+        }
+        postOrderHelper(root.left, result);
+        postOrderHelper(root.right, result);
+        result.add(root.data);
+    }
+    
+    public static TreeNode init01() {
+        TreeNode root = new TreeNode(314);
+        TreeNode n6 = new TreeNode(6);
+        TreeNode n7 = new TreeNode(7);
+        TreeNode n271 = new TreeNode(271);
+        TreeNode n561 = new TreeNode(561);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n272 = new TreeNode(272);
+        TreeNode n28 = new TreeNode(28);
+        TreeNode n0 = new TreeNode(0);
+        TreeNode n3 = new TreeNode(3);
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n29 = new TreeNode(29);
+        TreeNode n17 = new TreeNode(17);
+        TreeNode n401 = new TreeNode(401);
+        TreeNode n257 = new TreeNode(257);
+        TreeNode n641 = new TreeNode(641);
+        
+        // level 0
+        root.left = n6;
+        root.right = n7;
+        
+        // level 1
+        n6.left = n271;
+        n6.right = n561;
+        n7.left = n2;
+        n7.right = n272;
+        
+        // level 2
+        n271.left = n28;
+        n271.right = n0;
+        n561.right = n3;
+        n2.right = n1;
+        n272.right = n29;
+        
+        //level 3
+        n3.left = n17;
+        n1.left = n401;
+        n1.right = n257;
+        
+        // level 4
+        n401.right = n641;
+        
+        return root;
     }
 }

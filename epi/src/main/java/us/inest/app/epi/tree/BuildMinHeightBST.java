@@ -15,7 +15,7 @@ public class BuildMinHeightBST {
             return null;
         }
         //recursive call
-        int mid = (start + end) / 2;
+        int mid = start + (end - start) / 2;
         return new TreeNode(arr.get(mid), buildMinHeightBSTHelper(arr, start, mid - 1),
                 buildMinHeightBSTHelper(arr, mid + 1, end));
     }
