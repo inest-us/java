@@ -117,4 +117,23 @@ public class TreeUtils {
         
         return root;
     }
+    
+    public static TreeNode initSymmetricTree() {
+        TreeNode A = new TreeNode(314);
+        TreeNode B = new TreeNode(6);
+        TreeNode C = new TreeNode(2);
+        TreeNode D = new TreeNode(3);
+        TreeNode E = new TreeNode(6);
+        TreeNode F = new TreeNode(2);
+        TreeNode G = new TreeNode(3);
+        
+        A.left = B;
+        A.right = E;
+        B.right = C;
+        E.left = F;
+        C.right = D;
+        F.left = G;
+        
+        return A;
+    }
 }
