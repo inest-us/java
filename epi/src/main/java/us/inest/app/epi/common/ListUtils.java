@@ -51,4 +51,15 @@ public class ListUtils {
         }
         System.out.println();
     }
+    
+    public static void print(ListNode head) {
+        if (head == null) {
+            return;
+        }
+        while (head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+        System.out.println();
+    }
 }
