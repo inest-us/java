@@ -17,7 +17,7 @@ public class TreeUtils {
         if (root == null) {
             return new TreeNode(value, null, null);
         }
-        if (value < root.data) {
+        if (value < root.val) {
             root.left = insertBST(root.left, value);
         } else {
             root.right = insertBST(root.right, value);
