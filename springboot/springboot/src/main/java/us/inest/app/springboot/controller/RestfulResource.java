@@ -13,6 +13,7 @@ import us.inest.app.springboot.model.Book;
 @RestController
 public class RestfulResource {
     private ReadingListRepository readingListRepository;
+    
     @Value("${application.name}")
     private String appName;
 
