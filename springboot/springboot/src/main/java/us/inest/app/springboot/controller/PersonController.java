@@ -3,6 +3,9 @@ package us.inest.app.springboot.controller;
 import java.util.List;
 import java.util.UUID;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +30,7 @@ public class PersonController {
     }
     
     @PostMapping
-    public void addPerson(@RequestBody Person person) {
+    public void addPerson(@Valid @NotNull @RequestBody Person person) {
         personService.addPerson(person);
     }
     
@@ -48,7 +51,7 @@ public class PersonController {
     }
     
     @PutMapping(path="{id}")
-    public int updatePersonById(@PathVariable("id") UUID id, @RequestBody Person personToUpdate) {
+    public int updatePersonById(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Person personToUpdate) {
         return personService.updatePerson(id, personToUpdate);
     }
     
