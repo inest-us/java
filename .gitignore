@@ -2,3 +2,6 @@
 .DS_Store
 src/.DS_Store
 /target/
+.idea
+ProgrammingProblemsInJava.iml
+.idea/workspace.xml
