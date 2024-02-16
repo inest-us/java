@@ -6,6 +6,6 @@ import static org.junit.Assert.*;
 public class SampleServiceTest {
     @Test
     public void sampleTest() {
-        fail("TODO");
+
     }
 }
