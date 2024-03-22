@@ -1,9 +1,11 @@
 package us.inest.app.epi.arrays;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class CanReachEndTest {
     @Test
