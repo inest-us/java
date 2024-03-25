@@ -7,9 +7,9 @@ public class PlusOne {
         if (arr == null) {
             return null;
         }
-        int n = arr.size() - 1;
-        arr.set(n, arr.get(n) + 1);
-        for (int i = n; i > 0 && arr.get(i) == 10; i--) {
+        int index = arr.size() - 1;
+        arr.set(index, arr.get(index) + 1);
+        for (int i = index; i > 0 && arr.get(i) == 10; i--) {
             arr.set(i, 0);
             arr.set(i - 1, arr.get(i - 1) + 1);
         }
