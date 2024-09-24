@@ -3,12 +3,13 @@ package us.inest.app.springboot.model;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.validation.constraints.NotNull;
+
+import jakarta.annotation.Nonnull;
 
 public class Person {
     private final UUID id;
     
-    @NotNull
+    @Nonnull
     private final String name;
     
     public Person(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {

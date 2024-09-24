@@ -3,10 +3,8 @@ package us.inest.app.springboot.controller;
 import java.util.List;
 import java.util.UUID;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.annotation.Nonnull;
 import us.inest.app.springboot.model.Person;
 import us.inest.app.springboot.service.PersonService;
 
@@ -30,7 +29,7 @@ public class PersonController {
     }
     
     @PostMapping
-    public void addPerson(@Valid @NotNull @RequestBody Person person) {
+    public void addPerson(@Validated @Nonnull @RequestBody Person person) {
         personService.addPerson(person);
     }
     
@@ -51,7 +50,7 @@ public class PersonController {
     }
     
     @PutMapping(path="{id}")
-    public int updatePersonById(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Person personToUpdate) {
+    public int updatePersonById(@PathVariable("id") UUID id, @Validated @Nonnull @RequestBody Person personToUpdate) {
         return personService.updatePerson(id, personToUpdate);
     }
     
